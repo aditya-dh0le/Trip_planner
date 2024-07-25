@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <div class="card"> <!--having entire weather card content-->
+        <div class="search"> 
+            <input type="text" placeholder="Enter City name" spellcheck="false" id="cityName">
+            <button onclick="checkWeather()"><img src="images/search..jfif"></button>
+        </div>
+
+
+        <div class="weather">
+            <img src="images/partly_cloudy.png" class="weather-icon">
+            <h1 id="temp"></h1>
+            <h2 id="city"></h2>
+            <div class="details">
+            <div class="col">
+                <img src="images/humidity.png">
+                <div>
+                    <p class="humidity" id="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="images/wind.png">
+                <div>
+                    <p class="wind" id="wind"></p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+<script>
+    const apikey = 'ada01e49806a386e145baa2c01c5e0ff'; //API key for accessing the OpenWeatherMap API
+    
+    async function checkWeather(){
+        const cityName = document.getElementById("cityName").value; //Retrieves the value entered in the input field 
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?
+        units=metric&q=${cityName}`;  //construct the URL for API request
+        
+        const response= await fetch(apiUrl + `&appid=${apikey}` ); //Here fetch function is used to send request to  OpenWeatherMap API
+        var data = await response.json();
+        const temperature = data.main.temp; //Extract the temp value from API resp.
+        document.getElementById("temp").innerText = (temperature - 273) + '°C'; //convert temp kelvin to celsius
+        document.getElementById("city").innerText = data.name;
+        document.getElementById("humidity").innerText = data.main.humidity + '%';
+        document.getElementById("wind").innerText = data.wind.speed + 'Km/h';
+        console.log(data); 
+    
+    }
+    
+</script>
+</body>
+</html>
