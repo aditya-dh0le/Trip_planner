@@ -1,49 +1,66 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
+const data = require("./data/data.js");
+const fsPromises = require("fs").promises;
+const path = require("path");
 
 const app = express();
 
+let cities = {}
+
 app.use(express.json());
+app.use(cors());
 
-// Endpoint to handle file upload
-app.post("/api", async (req, res) => {
-  try {
+const loadData = async ()=>{
+  let file_data = await fsPromises.readFile(path.join(__dirname, ".", "data", "data.json"), 'utf8')
+  return file_data;
+}
 
-    const reqParams = {
-        source: req.body.source,
-        destination: req.body.destination
-    }
+const loadCities = async ()=>{
+  let file_data = await fsPromises.readFile(path.join(__dirname, ".", "data", "cities.json"), 'utf8')
+  return file_data;
+}
 
-    const pythonApiUrl = "http://127.0.0.1:5000/get_places";
-    // const response = await axios.post(pythonApiUrl, reqParams);
+app.use("/api/python", require('./routes/python.js'));
 
-    try {
-        const response = await axios.post(pythonApiUrl, reqParams);
-        console.log('Response from Python API:', response.data);
-        return res.json(response.data);
-    } catch (error) {
-        console.error('Error making POST request:', error);
-        throw error;
-    }
-  } catch (error) {
-    console.error("Error uploading file:", error);
-    res.status(500).send("Error uploading file.");
-  }
-});
-
-app.get("/data", async (req, res) => {
-  try {
-    console.log('request');
-    res.send('successfull');
-  } catch (error) {
-    return res.json({ message: error.message });
-  }
-});
+app.use('/places', require('./routes/routes.js'));
 
 app.get('/', (req,res)=>{
     console.log('working');
     res.send('connection successfull');
 })
+
+app.post('/cities', (req,res)=>{
+  try {
+    console.log(req.body);
+    cities = req.body;
+    res.send('done');
+  } catch (error) {
+    throw error;
+  }
+})
+
+app.get('/cities', async (req,res)=>{
+  try {
+    let citiesData = await loadCities();
+    res.send(citiesData);
+  } catch (error) {
+    throw error;
+  }
+})
+
+app.get('/data', async (req,res)=>{
+  try {
+    let result = await loadData();
+    // console.log(...result, ...cities);
+    console.log(result);
+    return res.send(result);
+  } catch (error) {
+    throw error;
+  }
+})
+
 
 const PORT = process.env.PORT || 3500;
 app.listen(PORT, () => {
