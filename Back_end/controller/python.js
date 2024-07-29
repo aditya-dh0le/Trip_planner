@@ -22,15 +22,11 @@ const info = {
         dest: req.body.destination
       };
   
-    console.log(reqParams);
-  
     const pythonApiUrl = "http://127.0.0.1:5000/get_places";
   
     try {
       const response = await axios.post(pythonApiUrl, reqParams);
-      console.log('Response from Python API:', response.data);
   
-      // Assuming response.data is an array or should be set directly
       info.setData(response.data);
   
       await fsPromises.writeFile(
@@ -50,5 +46,4 @@ const info = {
     }
   };
   
-
   module.exports = {handlePythonCall}

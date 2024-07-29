@@ -2,7 +2,7 @@ const places = require("../places.js");
 
 const handleGetPlaces = async (req,res)=>{
     try {
-      console.log('successfull');
+      console.log('/GET /places');
       return res.json(places);
     } catch (error) {
       console.log('error');
@@ -10,4 +10,14 @@ const handleGetPlaces = async (req,res)=>{
     }
   }
 
-module.exports = {handleGetPlaces}
+const handleRegisterUser = async (req,res)=>{
+  try {
+    console.log('/POST /user/register');
+    console.log(req.body);
+    res.send('')
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = {handleGetPlaces, handleRegisterUser}
