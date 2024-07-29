@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Webpage and Save as PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqKB7jWrQLdSWn7IKtolvxRyx3kDDS7cM"></script>
+    <style>
+        #map {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Your Webpage Content</h1>
+        <p>This is your webpage content that will be captured in the PDF.</p>
+        <div id="map"></div>
+    </div>
+    <button id="captureBtn">Capture and Save as PDF</button>
+
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: { lat: 40.712776, lng: -74.005974 },
+                zoom: 13
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+        window.onload = initMap;
+
+        document.getElementById('captureBtn').addEventListener('click', function () {
+            html2canvas(document.getElementById('content')).then(canvas => {
+                var content = canvas.toDataURL('image/png');
+
+                fetch('http://localhost:3000/generate-pdf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        content: document.getElementById('content').outerHTML,
+                        mapUrl: 'https://www.google.com/maps'
+                    })
+                })
+                .then(response => response.blob())
+                .then(blob => {
+                    var link = document.createElement('a');
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = 'webpage.pdf';
+                    link.click();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            })
+            .catch(error => {
+                console.error('Error capturing content:', error);
+            });
+        });
+    </script>
+</body>
+</html>
