@@ -45,11 +45,11 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         
-        <Route element={<ProtectedRoutes />}>
+        {/* <Route element={<ProtectedRoutes />}> */}
           <Route path="/home" element={<FormComponent />} />
           <Route path="/business" element={<><NavbarComponent /><Grid /></>} />
           <Route path="/test" element={<><NavbarComponent /><DetourMap /><Enroute /></>} />
-        </Route>
+        {/* </Route> */}
       </Routes>
       </BrowserRouter>
     </div>
