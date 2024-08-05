@@ -24,6 +24,10 @@ function Login() {
         navigate('/home');
     }
 
+  function handleRegisterClick() {
+    navigate('/register');
+  }
+
     return (
     <Form onSubmit={loginUser}>
 
@@ -39,6 +43,14 @@ function Login() {
 
       <Button variant="primary" type="submit">
         Submit
+      </Button>
+      
+      <Button 
+                variant="secondary" 
+                className="ms-2" 
+                onClick={handleRegisterClick}
+      >
+        Register
       </Button>
     </Form>
   );

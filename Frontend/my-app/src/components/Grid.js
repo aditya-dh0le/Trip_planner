@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +11,7 @@ import DetourRedirect from './DetourRedirect';
 function Grid() {
   return (
     <Container>
-      <Row className='mb-4'>
+      <Row  className='justify-content-center mb-4'>
         <Col><DirectionsMap/></Col>
         <Col>
         <WeatherCard/>

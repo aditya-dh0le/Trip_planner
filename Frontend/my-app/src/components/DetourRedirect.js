@@ -28,7 +28,7 @@ function DetourRedirect() {
     const navigate = useNavigate();
   
     function handleLinkClick() {
-      navigate("/test");
+      navigate("/detour");
     }
   
     return (

@@ -1,39 +1,123 @@
+// import ListGroup from 'react-bootstrap/ListGroup';
+// import Container from 'react-bootstrap/Container';
+// import axios from 'axios';
+// import { useState, useEffect } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+// let response = await axios.get('http://127.0.0.1:3500/data');
+// const apikey = 'ada01e49806a386e145baa2c01c5e0ff';
+
+// async function getData() {
+//   let apidata = await axios.get('http://127.0.0.1:3500/data');
+//   console.log('Check response', apidata)
+//   if(apidata) {
+//     return apidata
+//   }
+// }
+
+// export function Weather() {
+//     let [data, setData] = useState(response.data);
+
+//   return (
+//     <>
+//     <Destination/>
+//     <Enroute/>
+//     <Budget/>    
+//     </>
+//   );
+// }
+
+// export function Enroute() {
+//   const [data, setData] = useState(response.data);
+
+//   useEffect(() => {
+//   }, []);
+
+//   return (
+//     <Container className="mt-5 mb-5">
+//       <div>
+//         <h2>En-Route</h2>
+//         <ListGroup>
+//           {data.en_route.map((place, index) => (
+//             <ListGroup.Item key={index}>
+//               <h5 style={{ fontWeight: 'bold', color: '#007bff' }}>{place.name}</h5>
+//               <div>{place.description}</div>
+//             </ListGroup.Item>
+//           ))}
+//         </ListGroup>
+//       </div>
+//     </Container>
+//   );
+// }
+
+// export function Destination() {
+//   const [data, setData] = useState(response.data);
+
+//   useEffect(() => {
+//   }, []);
+
+//   return (
+//     <div>
+//       <h2>Destination</h2>
+//       <ListGroup as="ol">
+//         {data.destination.map((place, index) => (
+//           <ListGroup.Item key={index} as="li">
+//             <h5 style={{ fontWeight: 'bold'}}>{place.name}</h5>
+//             <div>{place.description}</div>
+//           </ListGroup.Item>
+//         ))}
+//       </ListGroup>
+//     </div>
+//   );
+// }
+
+// export function Budget() {
+//   const [data, setData] = useState(response.data);
+
+//   useEffect(() => {}, []);
+
+//   return (
+//     <div>
+//       <h2>Budget</h2>
+//       <ListGroup as="ol">
+//         {data.destination.map((place, index) => (
+//           <ListGroup.Item key={index} as="li">
+//             <div>
+//               <h5 style={{ fontWeight: 'bold'}}>{place.name}</h5>
+//               <div>Budget: {place.budget}</div>
+//             </div>
+//           </ListGroup.Item>
+//         ))}
+//       </ListGroup>
+//     </div>
+//   );
+// }
 import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Base API URL
-const apiUrl = 'http://127.0.0.1:3500/data';
+let response = await axios.get('http://127.0.0.1:3500/data');
+const apikey = 'ada01e49806a386e145baa2c01c5e0ff';
 
-function useFetchData() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+export function Weather() {
+    let [data, setData] = useState(response.data);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const timestamp = new Date().getTime(); // Add a timestamp
-        const response = await axios.get(`${apiUrl}?_=${timestamp}`);
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []); // Dependencies can be added if needed
-
-  return { data, loading };
+  return (
+    <>
+    <Destination/>
+    <Enroute/>
+    <Budget/>    
+    </>
+  );
 }
 
 export function Enroute() {
-  const { data, loading } = useFetchData();
+  const [data, setData] = useState(response.data);
 
-  if (loading) return <div>Loading...</div>;
+  useEffect(() => {
+  }, []);
 
   return (
     <Container className="mt-5 mb-5">
@@ -53,9 +137,10 @@ export function Enroute() {
 }
 
 export function Destination() {
-  const { data, loading } = useFetchData();
+  const [data, setData] = useState(response.data);
 
-  if (loading) return <div>Loading...</div>;
+  useEffect(() => {
+  }, []);
 
   return (
     <div>
@@ -63,7 +148,7 @@ export function Destination() {
       <ListGroup as="ol">
         {data.destination.map((place, index) => (
           <ListGroup.Item key={index} as="li">
-            <h5 style={{ fontWeight: 'bold' }}>{place.name}</h5>
+            <h5 style={{ fontWeight: 'bold'}}>{place.name}</h5>
             <div>{place.description}</div>
           </ListGroup.Item>
         ))}
@@ -73,9 +158,9 @@ export function Destination() {
 }
 
 export function Budget() {
-  const { data, loading } = useFetchData();
+  const [data, setData] = useState(response.data);
 
-  if (loading) return <div>Loading...</div>;
+  useEffect(() => {}, []);
 
   return (
     <div>
@@ -84,8 +169,25 @@ export function Budget() {
         {data.destination.map((place, index) => (
           <ListGroup.Item key={index} as="li">
             <div>
-              <h5 style={{ fontWeight: 'bold' }}>{place.name}</h5>
-              <div>Budget: {place.budget}</div>
+              <h5 style={{ fontWeight: 'bold'}}>{place.name}</h5>
+              {/* <div>Budget: {place.budget}</div> */}
+              
+              <div>
+                Accommodation: {place.budget?.accommodation}
+              </div>
+
+              <div>
+                Food: {place.budget?.food}
+              </div>
+
+              <div>
+                Sightseeing: {place.budget?.sightseeing}
+              </div>
+
+              <div>
+                Transport: {place.budget?.transport}
+              </div>
+
             </div>
           </ListGroup.Item>
         ))}

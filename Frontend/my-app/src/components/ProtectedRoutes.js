@@ -39,7 +39,7 @@ const ProtectedRoutes = () => {
     return <div>Loading...</div>; // You might want to add a spinner or loading message
   }
 
-  return authenticated ? <Outlet /> : <Navigate to="/" />;
+  return authenticated ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

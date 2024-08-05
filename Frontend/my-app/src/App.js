@@ -11,6 +11,12 @@ import NavbarComponent from './components/Navbar';
 import DetourMap from './components/DetourMap';
 import Login from './components/Login';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import RapidApi from './components/RapidApi';
+import GridComponent from './components/GridComponent';
+import DetourComponent from './components/DetourComponent';
+import CrewComponent from './components/CrewComponent';
+import LoginComponent from './components/LoginComponent';
+import HomeComponent from './components/HomeComponent';
 
 function App() {
 
@@ -33,7 +39,7 @@ function App() {
     },
     {
       path:"/test",
-      element:<><NavbarComponent/><DetourMap/><Enroute/></>
+      element:<></>
     }
   ])
 
@@ -42,14 +48,18 @@ function App() {
       {/* <RouterProvider router={router}/> */}
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/login" element={<LoginComponent />} />
+        <Route path="/" element={<HomeComponent />} />
         <Route path="/register" element={<Register />} />
         
-        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route element={<ProtectedRoutes />}>
           <Route path="/home" element={<FormComponent />} />
-          <Route path="/business" element={<><NavbarComponent /><Grid /></>} />
-          <Route path="/test" element={<><NavbarComponent /><DetourMap /><Enroute /></>} />
-        {/* </Route> */}
+          {/* <Route path="/business" element={<><NavbarComponent /><Grid /></>} /> */}
+          <Route path="/test" element={<><NavbarComponent /><GridComponent/></>} />
+          <Route path="/detour" element={<><NavbarComponent /><DetourComponent/></>} />
+          <Route path="/crew" element={<><NavbarComponent /><CrewComponent/></>} />
+        </Route>
       </Routes>
       </BrowserRouter>
     </div>

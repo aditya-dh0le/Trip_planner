@@ -1,0 +1,110 @@
+.login-container {
+    display: flex;
+    background-color: #ffffff;
+ 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+   
+    background-size: cover; /* Ensure the image covers the entire container */
+     background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image within the container */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+  }
+ 
+  .text-center {
+    text-align: center;
+    color: #ffffff; /* White text color to contrast with background */
+  }
+ 
+ 
+  .heading {
+    font-size: 6rem; /* Adjust font size as needed */
+    color: #000000; /* White color for the heading */
+    margin-bottom: 0.5rem;
+    font-weight: 750; /* Spacing below the heading */
+  }
+ 
+  .subheading {
+    font-size: 1.50rem; /* Adjust font size as needed */
+    color: #000000; /* Light color for the subheading */
+ 
+    margin-bottom: 2rem; /* Spacing below the subheading */
+  }
+ 
+  .login-card {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for the card */
+    border-radius: 8px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+  }
+ 
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+ 
+  .label {
+    font-size: 15px;
+    padding-bottom: 5px;
+    color: #000000; /* Adjust color if needed */
+  }
+ 
+  .input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #000000;
+    font-size: 15px;
+    border: 2px solid black;
+    background-color: transparent;
+    box-shadow:
+                -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+ 
+  .input:focus {
+    border: 2px solid transparent;
+    color: #000000;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+                -1px -1px 6px rgba(255, 255, 255, 0.4),
+                inset 3px 3px 10px rgba(0,0,0,1),
+                inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+ 
+  .input:focus ~ .label,
+  .input:valid ~ .label {
+    transition: 0.5s;
+    padding-left: 6px;
+    transform: translateY(-35px);
+  }
+/* Define the plane container */
+.plane {
+    position: absolute;
+    top: 29.5%; /* Adjust as needed */
+    left: -10%; /* Start off-screen */
+    z-index: 10;
+    transition: left 3s ease-out; /* Duration and easing of the animation */
+}
+ 
+.plane img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+ 
+/* Animation class */
+.animate-plane {
+    left: 56.5vw; /* Move to the right side of the viewport */
+}
+ 
+/* Ensure the container of the plane is positioned properly */
+.login-container {
+    position: relative;
+}

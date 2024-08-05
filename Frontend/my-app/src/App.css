@@ -42,6 +42,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+ 
 .App {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -57,3 +60,134 @@
   color: #EF5A6F;
 }
 
+.destination-component,
+.budget-component {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.App {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+ 
+.brand {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #EF5A6F;
+}
+ 
+/* App.css */
+.custom-button {
+  width: 175px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: rgb(125, 192, 26);
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: 1px solid black;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+}
+ 
+.custom-button:hover {
+  background-color: rgb(154, 206, 9);
+  transition-duration: 0.5s;
+}
+ 
+.custom-button:active {
+  transform: scale(0.97);
+  transition-duration: 0.2s;
+}
+ 
+.svgIcon {
+  height: 25px;
+  transition-duration: 1.5s;
+}
+ 
+.custom-button:hover .svgIcon {
+  transform: rotate(360deg);
+  transition-duration: 2s;
+}
+ 
+.floating-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 1000; /* Make sure it’s above other elements */
+  pointer-events: none; /* Disable interaction */
+  overflow: hidden; /* Prevent scrolling */
+}
+ 
+.road {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Adjust height to fit the car */
+  background: rgb(71, 70, 70);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  overflow: hidden;
+}
+ 
+#car {
+  position: absolute;
+  width: 150px; /* Adjust width based on image size */
+  height: auto; /* Maintain aspect ratio */
+ 
+  animation: drive 5s linear infinite;
+}
+ 
+#car img {
+  width: 100%; /* Make sure the image fits the container */
+  height: auto; /* Maintain aspect ratio */
+}
+ 
+.message {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ 
+@keyframes drive {
+  0% {
+    left: -80px; /* Start off-screen to the left (match car width) */
+  }
+  100% {
+    left: 100vw; /* Move off-screen to the right */
+  }
+}
+ 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
