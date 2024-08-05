@@ -22,8 +22,6 @@ const info = {
         dest: req.body.destination
       };
 
-      // return res.send({msg: "success"});
-
     const pythonApiUrl = "http://127.0.0.1:5000/get_places";
   
     try {

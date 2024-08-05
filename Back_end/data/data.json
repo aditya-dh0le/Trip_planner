@@ -1,1 +1,104 @@
-{"base_budget":[{"budget from source to destination":"$$$"}],"destination":[{"budget":{"accommodation":"NA","food":"Approx. $15 per day (various food trucks at the site)","transport":"Approx. $20 for entry fee and transportation (Uber)"},"description":"Iconic red suspension bridge offering a pedestrian walkway with stunning views of the city and bay.","name":"Golden Gate Bridge","position":{"lat":37.8199,"lng":-122.4783}},{"budget":{"accommodation":"NA","food":"Approx. $20 per day (cafeteria on the island)","transport":"Approx. $40 for ferry tickets and tours"},"description":"Infamous site of the former maximum-security prison, now a museum with audio tours offering insights into its history.","name":"Alcatraz Island","position":{"lat":37.8267,"lng":-122.4233}},{"budget":{"accommodation":"NA","food":"Approx. $25 per day (seafood at Scoma's restaurant)","transport":"Approx. $10 for local transportation (cable car)"},"description":"Waterfront district known for its shops, restaurants, and sea lion colony, with views of the Golden Gate Bridge.","name":"Fisherman's Wharf","position":{"lat":37.808,"lng":-122.4177}},{"budget":{"accommodation":"NA","food":"NA","transport":"NA"},"description":"Famous steep, winding street with eight hairpin turns, known as 'the crookedest street in the world.'","name":"Lombard Street","position":{"lat":37.8021,"lng":-122.4187}},{"budget":{"accommodation":"Approx. $150 per night (luxury hotel in Union Square)","food":"Approx. $50 per day (fine dining at Gary Danko restaurant)","transport":"Approx. $15 for local transportation (public buses)"},"description":"Popular shopping and cultural hub in downtown San Francisco, offering shops, theaters, and art galleries.","name":"Union Square","position":{"lat":37.7887,"lng":-122.4076}}],"en_route":[{"budget":{"accommodation":"Approx. $50 per night (3-star hotel in Colaba area)","food":"Approx. $15 per day (local Indian cuisine at Leopold Cafe)","transport":"Approx. $10 for local transportation (taxis/auto rickshaws)"},"description":"The bustling city of Mumbai is known for its historic colonial architecture, vibrant street markets, and bustling nightlife.","name":"Mumbai, India","position":{"lat":19.076,"lng":72.8777}},{"budget":{"accommodation":"Approx. $30 per night (beachside guesthouse in Calangute)","food":"Approx. $10 per day (seafood at Britto's restaurant)","transport":"Approx. $5 for local transportation (renting a scooter)"},"description":"Goa is famous for its beautiful beaches, Portuguese heritage, and vibrant nightlife.","name":"Goa, India","position":{"lat":15.2993,"lng":74.124}},{"budget":{"accommodation":"Approx. $100 per night (4-star hotel in Downtown Dubai)","food":"Approx. $30 per day (international cuisine at Zuma restaurant)","transport":"Approx. $20 for local transportation (metro and taxis)"},"description":"Dubai is known for its luxury shopping, ultramodern architecture, and lively nightlife scene.","name":"Dubai, UAE","position":{"lat":25.276987,"lng":55.296249}},{"budget":{"accommodation":"Approx. $40 per night (boutique hotel in Sultanahmet)","food":"Approx. $12 per day (Turkish cuisine at Doy Doy Restaurant)","transport":"Approx. $5 for local transportation (trams and ferries)"},"description":"Istanbul straddles Europe and Asia across the Bosphorus Strait and is known for its historic sites, vibrant markets, and delicious cuisine.","name":"Istanbul, Turkey","position":{"lat":41.0082,"lng":28.9784}},{"budget":{"accommodation":"Approx. $120 per night (3-star hotel in Kensington)","food":"Approx. $40 per day (British cuisine at The Wolseley restaurant)","transport":"Approx. $20 for local transportation (London Underground)"},"description":"London, the capital of England, offers a mix of historic landmarks, world-class museums, and diverse cultural experiences.","name":"London, UK","position":{"lat":51.5074,"lng":-0.1278}}],"requestData":[{"dest":"San Francisco, USA","src":"Nashik, India"}]}
+{
+  "base_budget": [{ "budget from source to destination": "$$$" }],
+  "destination": [
+    {
+      "budget": {
+        "accommodation": "NA",
+        "food": "Approx. $15 per day (various food trucks at the site)",
+        "transport": "Approx. $20 for entry fee and transportation (Uber)"
+      },
+      "description": "Iconic red suspension bridge offering a pedestrian walkway with stunning views of the city and bay.",
+      "name": "Golden Gate Bridge",
+      "position": { "lat": 37.8199, "lng": -122.4783 }
+    },
+    {
+      "budget": {
+        "accommodation": "NA",
+        "food": "Approx. $20 per day (cafeteria on the island)",
+        "transport": "Approx. $40 for ferry tickets and tours"
+      },
+      "description": "Infamous site of the former maximum-security prison, now a museum with audio tours offering insights into its history.",
+      "name": "Alcatraz Island",
+      "position": { "lat": 37.8267, "lng": -122.4233 }
+    },
+    {
+      "budget": {
+        "accommodation": "NA",
+        "food": "Approx. $25 per day (seafood at Scoma's restaurant)",
+        "transport": "Approx. $10 for local transportation (cable car)"
+      },
+      "description": "Waterfront district known for its shops, restaurants, and sea lion colony, with views of the Golden Gate Bridge.",
+      "name": "Fisherman's Wharf",
+      "position": { "lat": 37.808, "lng": -122.4177 }
+    },
+    {
+      "budget": { "accommodation": "NA", "food": "NA", "transport": "NA" },
+      "description": "Famous steep, winding street with eight hairpin turns, known as 'the crookedest street in the world.'",
+      "name": "Lombard Street",
+      "position": { "lat": 37.8021, "lng": -122.4187 }
+    },
+    {
+      "budget": {
+        "accommodation": "Approx. $150 per night (luxury hotel in Union Square)",
+        "food": "Approx. $50 per day (fine dining at Gary Danko restaurant)",
+        "transport": "Approx. $15 for local transportation (public buses)"
+      },
+      "description": "Popular shopping and cultural hub in downtown San Francisco, offering shops, theaters, and art galleries.",
+      "name": "Union Square",
+      "position": { "lat": 37.7887, "lng": -122.4076 }
+    }
+  ],
+  "en_route": [
+    {
+      "budget": {
+        "accommodation": "Approx. $50 per night (3-star hotel in Colaba area)",
+        "food": "Approx. $15 per day (local Indian cuisine at Leopold Cafe)",
+        "transport": "Approx. $10 for local transportation (taxis/auto rickshaws)"
+      },
+      "description": "The bustling city of Mumbai is known for its historic colonial architecture, vibrant street markets, and bustling nightlife.",
+      "name": "Mumbai, India",
+      "position": { "lat": 19.076, "lng": 72.8777 }
+    },
+    {
+      "budget": {
+        "accommodation": "Approx. $30 per night (beachside guesthouse in Calangute)",
+        "food": "Approx. $10 per day (seafood at Britto's restaurant)",
+        "transport": "Approx. $5 for local transportation (renting a scooter)"
+      },
+      "description": "Goa is famous for its beautiful beaches, Portuguese heritage, and vibrant nightlife.",
+      "name": "Goa, India",
+      "position": { "lat": 15.2993, "lng": 74.124 }
+    },
+    {
+      "budget": {
+        "accommodation": "Approx. $100 per night (4-star hotel in Downtown Dubai)",
+        "food": "Approx. $30 per day (international cuisine at Zuma restaurant)",
+        "transport": "Approx. $20 for local transportation (metro and taxis)"
+      },
+      "description": "Dubai is known for its luxury shopping, ultramodern architecture, and lively nightlife scene.",
+      "name": "Dubai, UAE",
+      "position": { "lat": 25.276987, "lng": 55.296249 }
+    },
+    {
+      "budget": {
+        "accommodation": "Approx. $40 per night (boutique hotel in Sultanahmet)",
+        "food": "Approx. $12 per day (Turkish cuisine at Doy Doy Restaurant)",
+        "transport": "Approx. $5 for local transportation (trams and ferries)"
+      },
+      "description": "Istanbul straddles Europe and Asia across the Bosphorus Strait and is known for its historic sites, vibrant markets, and delicious cuisine.",
+      "name": "Istanbul, Turkey",
+      "position": { "lat": 41.0082, "lng": 28.9784 }
+    },
+    {
+      "budget": {
+        "accommodation": "Approx. $120 per night (3-star hotel in Kensington)",
+        "food": "Approx. $40 per day (British cuisine at The Wolseley restaurant)",
+        "transport": "Approx. $20 for local transportation (London Underground)"
+      },
+      "description": "London, the capital of England, offers a mix of historic landmarks, world-class museums, and diverse cultural experiences.",
+      "name": "London, UK",
+      "position": { "lat": 51.5074, "lng": -0.1278 }
+    }
+  ],
+  "requestData": [{ "dest": "San Francisco, USA", "src": "Nashik, India" }]
+}

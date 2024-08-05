@@ -16,6 +16,7 @@ const handleGetPlaces = async (req,res)=>{
     }
   }
 
+<<<<<<< HEAD
 const handleRegisterUser = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -82,3 +83,16 @@ const handleUserLogout = (req, res) => {
 }
 
 module.exports = {handleGetPlaces, handleRegisterUser, handleUserLogin, handleUserAuth, handleUserLogout}
+=======
+const handleRegisterUser = async (req,res)=>{
+  try {
+    console.log('/POST /user/register');
+    console.log(req.body);
+    res.send('')
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = {handleGetPlaces, handleRegisterUser}
+>>>>>>> 04c3a70fa957a2ef3ef2e207a8e183a0bd3ac4b9
